@@ -27,6 +27,7 @@ app.all("*", (request, response, next) => {
   next(new createError.NotFound());
 });
 app.use((error, request, response, next) => {
+  console.log("ookeokeokekekekekekeke", error.message);
   const messageError = error.message || "internal server error";
   const statusCode = error.status || 500;
 

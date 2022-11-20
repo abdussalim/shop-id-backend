@@ -15,8 +15,8 @@ const { authRoles } = require("../middlewares/authuser");
 router
   .get("/", showAllProducts)
   .get("/:id", showProduct)
-  .post("/", upload, addProduct)
-  .put("/:id", upload, editProduct)
-  .delete("/:id", deleteProduct);
+  .post("/", accessPass, authRoles, upload.single("thumbnail"), addProduct)
+  .put("/:id", accessPass, authRoles, upload.single("thumbnail"), editProduct)
+  .delete("/:id", accessPass, authRoles, deleteProduct);
 
 module.exports = router;

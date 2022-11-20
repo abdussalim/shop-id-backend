@@ -70,9 +70,9 @@ const productsController = {
       .catch((error) => response.send(error));
   },
 
-  addProduct: async (req, res) => {
+  addProduct: async (request, response) => {
     const id = uuidv4();
-    const file = req.files.thumbnail[0];
+    const file = request.file;
     const {
       name,
       stock,
@@ -82,10 +82,7 @@ const productsController = {
       description,
       condition,
       brand,
-    } = req.body;
-    // const {
-    //   rows: [count],
-    // } = await productsModel.countOfproducts();
+    } = request.body;
 
     let thumbnail = await uploadGDProductThumbnails(file);
     const data = {
@@ -103,30 +100,39 @@ const productsController = {
     productsModel
       .addProduct(data)
       .then((result) =>
-        commonsHelper.responseResult(res, result.rows, 201, "Product created")
+        commonsHelper.responseResult(
+          response,
+          result.rows,
+          201,
+          "Product created"
+        )
       )
-      .catch((err) => res.send(err));
+      .catch((error) => response.send(error));
   },
 
   editProduct: async (request, response, next) => {
     try {
       const id = request.params.id;
-      const file = req.files.thumbnail[0];
-      // const thumbnail = request.file.filename;
+      const { rowCount, rows } = await productsModel.showProduct(id);
+      if (!rowCount) {
+        return next(createError(403, "ID is Not Found"));
+      }
 
-      let thumbnail = req.files.thumbnail;
-      console.log(thumbnail);
-      if (req.files) {
-        if (req.files.thumbnail) {
-          // menghapus thumbnail sebelumnya di gd jika sebelumnya sudah pernah upload
-          console.log(req.files.thumbnail);
-          if (thumbnail) {
-            await deleteGoogleDrive(thumbnail);
-          }
-          // upload photo baru ke gd
-          console.log("ini thumbnail", req.files.thumbnail[0].path);
-          thumbnail = await uploadGDProductThumbnails(req.files.thumbnail[0]);
+      let { thumbnail } = rows[0];
+
+      if (request.file) {
+        // menghapus thumbnail sebelumnya di gd jika sebelumnya sudah pernah upload
+        if (thumbnail) {
+          console.log(thumbnail);
+          const thumbnailGoogleDriveID = thumbnail
+            .split("id=")[1]
+            .split("&sz")[0];
+          await deleteGoogleDrive(thumbnailGoogleDriveID);
+          console.log(thumbnailGoogleDriveID);
         }
+        // upload photo baru ke gd
+        thumbnail = await uploadGDProductThumbnails(request.file);
+        console.log(thumbnail);
       }
 
       const {
@@ -139,10 +145,7 @@ const productsController = {
         categories_id,
         transactions_id,
       } = request.body;
-      const { rowCount } = await productsModel.findProductID(id);
-      if (!rowCount) {
-        return next(createError(403, "ID is Not Found"));
-      }
+
       const data = {
         id,
         name,
@@ -165,14 +168,25 @@ const productsController = {
             "Product updated"
           )
         )
-        .catch((err) => response.send(err));
+        .catch((error) => response.send(error));
     } catch (error) {
       console.log(error);
     }
   },
 
-  deleteProduct: (request, response) => {
+  deleteProduct: async (request, response) => {
     const id = request.params.id;
+
+    const { rows } = await productsModel.showProduct(id);
+
+    let { thumbnail } = rows[0];
+
+    if (thumbnail) {
+      console.log(thumbnail);
+      const thumbnailGoogleDriveID = thumbnail.split("id=")[1].split("&sz")[0];
+      await deleteGoogleDrive(thumbnailGoogleDriveID);
+      console.log(thumbnailGoogleDriveID);
+    }
 
     productsModel
       .deleteProduct(id)
