@@ -1,0 +1,1212 @@
+{
+	"info": {
+		"_postman_id": "1562138e-877e-442b-8f13-e99aafe4a88a",
+		"name": "Toko",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11981914"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "show all products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1vYWxhaEBnbWFpbC5jb20iLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE2NjE1MjE4OTYsImV4cCI6MTY2MTUyNTQ5Nn0.Dpz3PZgJ5jtJYvVsQ3OUScZUMcUDWppZFWHsKJp7Q1Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/main/products/4",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"products",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMTM3MDE3LCJleHAiOjE2NjExNDA2MTd9.RtX1qJa0NVa4hoCoGhBlU9tg6VGEo4ALdaN2BfJkSCI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/products/3",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1vYWxhaEBnbWFpbC5jb20iLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE2NjE1MjI1NTAsImV4cCI6MTY2MTUyNjE1MH0.EnL69ElIABLP7hixYjwkpRMsrgpiSMBa-z7_gVrde2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/products/search?keyword=4",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1vYWxhaEBnbWFpbC5jb20iLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE2NjE1MTA5NjMsImV4cCI6MTY2MTUxNDU2M30.XkKX1d3ZcpBJYDtYuJ-y0oUEdkdSU8LH3hpexL55q-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Gambar yang berharga",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1200000",
+									"type": "text"
+								},
+								{
+									"key": "categories_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "transactions_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "Sarimu/Downloads/wew 2.jpg"
+								},
+								{
+									"key": "description",
+									"value": "mantappp",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/main/products/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1vYWxhaEBnbWFpbC5jb20iLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE2NjE1MTE1ODksImV4cCI6MTY2MTUxNTE4OX0.mp6NiFr1qpJIHe-ITd1CXTn41bOMni4a1HWdd-1vhdI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Baju Koko Salim Baru lohh",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "145000",
+									"type": "text"
+								},
+								{
+									"key": "categories_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "transactions_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "Sarimu/Downloads/wew 2.jpg"
+								},
+								{
+									"key": "description",
+									"value": "Muanntapp bangettt okkeeeeee",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/main/products/3",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1vYWxhaEBnbWFpbC5jb20iLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE2NjE1MTE1ODksImV4cCI6MTY2MTUxNTE4OX0.mp6NiFr1qpJIHe-ITd1CXTn41bOMni4a1HWdd-1vhdI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/products/4",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"products",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "show all categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1vYWxhaEBnbWFpbC5jb20iLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE2NjE1MjU0OTIsImV4cCI6MTY2MTUyOTA5Mn0.82qpuqPYR0LYPn_nOogpobIinfKo_8GPHrHqXJnYTEU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/categories?currentPage=3&numberPerPage=3&sort=ASC&sortby=id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "currentPage",
+									"value": "3"
+								},
+								{
+									"key": "numberPerPage",
+									"value": "3"
+								},
+								{
+									"key": "sort",
+									"value": "ASC"
+								},
+								{
+									"key": "sortby",
+									"value": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMDk0ODQzLCJleHAiOjE2NjExODEyNDN9.m_FcROTrG49eg_23ToXkr2OiKzaS8iBMi_kDhvTZ6VM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/categories/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMDk2NzE0LCJleHAiOjE2NjExMDAzMTR9.8Mc-csItiXHyJp_LrUWoUoIW6vVRr2mrNRfgXYAxQoU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/categories/search?keyword=1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"categories",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMDk2NzE0LCJleHAiOjE2NjExMDAzMTR9.8Mc-csItiXHyJp_LrUWoUoIW6vVRr2mrNRfgXYAxQoU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Baju Bekas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMDk2NzE0LCJleHAiOjE2NjExMDAzMTR9.8Mc-csItiXHyJp_LrUWoUoIW6vVRr2mrNRfgXYAxQoU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sepatu Adidas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/categories/9",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"categories",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMDk2NzE0LCJleHAiOjE2NjExMDAzMTR9.8Mc-csItiXHyJp_LrUWoUoIW6vVRr2mrNRfgXYAxQoU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/categories/12",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"categories",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "show all transactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1vYWxhaEBnbWFpbC5jb20iLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE2NjE1MTYxNzksImV4cCI6MTY2MTYwMjU3OX0.g7ey2prXwQfQv5k3WFKNgPOote-QhDSkhCXfzF1RihMGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1vYWxhaEBnbWFpbC5jb20iLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE2NjE1MTYxNzksImV4cCI6MTY2MTYwMjU3OX0.g7ey2prXwQfQv5k3WFKNgPOote-QhDSkhCXfzF1RihM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/transactions?currentPage=1&numberPerPage=3&sort=ASC&sortby=id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "currentPage",
+									"value": "1"
+								},
+								{
+									"key": "numberPerPage",
+									"value": "3"
+								},
+								{
+									"key": "sort",
+									"value": "ASC"
+								},
+								{
+									"key": "sortby",
+									"value": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/transactions/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/transactions/search?keyword=Jog",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"transactions",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Jog"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add transactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"Solo\",\r\n    \"detail_transactions_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit transaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"Jakarta\",\r\n    \"detail_transactions_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/transactions/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete transaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/transactions/4",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"transactions",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "detail transactions",
+			"item": [
+				{
+					"name": "show all detail transactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMDk0ODQzLCJleHAiOjE2NjEwOTg0NDN9.z0oaIWwfOTCgIQ-7-cKAjU8IvBF9FSdYfV7MnoE3bzQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/detail_transactions?currentPage=1&numberPerPage=3&sort=ASC&sortby=id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"detail_transactions"
+							],
+							"query": [
+								{
+									"key": "currentPage",
+									"value": "1"
+								},
+								{
+									"key": "numberPerPage",
+									"value": "3"
+								},
+								{
+									"key": "sort",
+									"value": "ASC"
+								},
+								{
+									"key": "sortby",
+									"value": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show detail transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMDk0ODQzLCJleHAiOjE2NjEwOTg0NDN9.z0oaIWwfOTCgIQ-7-cKAjU8IvBF9FSdYfV7MnoE3bzQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/detail_transactions/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"detail_transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search detail transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/detail_transactions/search?keyword=1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"detail_transactions",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add detail transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMDk2NzE0LCJleHAiOjE2NjExMDAzMTR9.8Mc-csItiXHyJp_LrUWoUoIW6vVRr2mrNRfgXYAxQoU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"total\": 700000,\r\n    \"payment_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/detail_transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"detail_transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit detail transaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"total\": 400000,\r\n    \"payment_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/detail_transactions/2",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"detail_transactions",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete transaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/detail_transactions/3",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"detail_transactions",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "show all payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/payment?currentPage=1&numberPerPage=3&sort=ASC&sortby=id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"payment"
+							],
+							"query": [
+								{
+									"key": "currentPage",
+									"value": "1"
+								},
+								{
+									"key": "numberPerPage",
+									"value": "3"
+								},
+								{
+									"key": "sort",
+									"value": "ASC"
+								},
+								{
+									"key": "sortby",
+									"value": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show payment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/payment/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"payment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/payment/search?keyword=250000",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"payment",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "250000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 600000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit payment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 145000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/payment/4",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"payment",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete payment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/main/payment/6",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"payment",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Create an Account (Register)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxNTA1NzAyLCJleHAiOjE2NjE1MDkzMDJ9.MqErekHCMGG_qYImZBNRzdJhPcS0CXmuTkhpDOWocQw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"abdussalimoalah@gmail.com\",\r\n    \"password\": \"cekcekaja\",\r\n    \"fullname\": \"Abdus Salim Oke\",\r\n    \"role\": \"buyer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Authorization (Login)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMDEwMjcyLCJleHAiOjE2NjEwOTY2NzJ9.mPcyRdRzEXir78IN6Upnuh7jdNMk0-jxavsbd-q7yhE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"abdussalimoalah@gmail.com\",\r\n    \"password\": \"cekcekaja\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1vYWxhaEBnbWFpbC5jb20iLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE2NjE1MTYxNzksImV4cCI6MTY2MTUxOTc3OX0.G87aB0RlwEr5DmlMYJ9s8hrd-7arNfUFCH8tvpmEnAE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"abdussalimoalah@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/users/user-profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"users",
+								"user-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1zYW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjYxMDc1OTU5LCJleHAiOjE2NjEwNzk1NTl9.JJgoKOXChMygohwQLd21ubaCxQcNCo6OTUwCej6DRC0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiZHVzc2FsaW1vYWxhaEBnbWFpbC5jb20iLCJyb2xlIjoiYnV5ZXIiLCJpYXQiOjE2NjE1MTYxNzksImV4cCI6MTY2MTYwMjU3OX0.g7ey2prXwQfQv5k3WFKNgPOote-QhDSkhCXfzF1RihM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/main/users/refresh-token",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"main",
+								"users",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
