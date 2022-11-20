@@ -64,7 +64,7 @@ const uploadGDProductThumbnails = async (file) => {
       requestBody: {
         name: file.filename,
         mimeType: file.mimeType,
-        parents: ["1Q1ZP3ZyR5NG6O-lLKssXTZV_UrBHd-4N"],
+        parents: ["1gQroy7a5PqUfZ803siGpH_CUIpr0zMyQ"],
       },
       media: {
         mimeType: file.mimeType,
