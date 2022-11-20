@@ -7,7 +7,6 @@ const app = express();
 const mainRouter = require("./src/routes/mainroutes");
 
 const createError = require("http-errors");
-// const helmet = require("helmet");
 const cors = require("cors");
 const morgan = require("morgan");
 
@@ -18,16 +17,13 @@ app.use(
   })
 );
 app.use(morgan("dev"));
-// app.use(helmet());
 
 app.use("/main", mainRouter);
-// app.use("/img", express.static("./src/uploads"));
 
 app.all("*", (request, response, next) => {
   next(new createError.NotFound());
 });
 app.use((error, request, response, next) => {
-  console.log("ookeokeokekekekekekeke", error.message);
   const messageError = error.message || "internal server error";
   const statusCode = error.status || 500;
 
