@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: "*",
+    methods: "GET,PUT,POST,DELETE",
   })
 );
 app.use(morgan("dev"));
