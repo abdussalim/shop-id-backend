@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./readme/logo.svg" />
+  <img src="./readme/Logo.svg" />
 </div>
 <h3 align="center">Shop.id Backend</h3>
 <p align="center">
