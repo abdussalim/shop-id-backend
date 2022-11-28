@@ -50,10 +50,6 @@ This is a Restful API repository for Shop Id. This Restful API is built using Ex
 - npm install or npm i
 - npm run server
 
-## Debug
-
-- npm run lint
-
 ### Executing program
 
 - Run program with `npm run dev` for development and `npm run start` for production
